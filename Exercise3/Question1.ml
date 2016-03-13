@@ -1,6 +1,10 @@
 type 'a btree =
-    | Empty
-    | Node of 'a * 'a btree * 'a btree
+    | EmptyTree
+    | TreeNode of 'a * 'a btree * 'a btree
+
+type 'a binary_heap =
+    | EmptyHeap
+    | HeapNode of 'a * int * 'a binary_heap * 'a binary_heap
 
 let left = function
     | Empty           -> failwith "No left of empty tree"
